@@ -1,0 +1,8 @@
+Package: tpm2-tools
+Version: 5.2
+Section: base
+Priority: optional
+Architecture: 
+Maintainer: Arturo Lotito <arlotito@microsoft.com>
+Description: tpm2-tools
+ https://github.com/tpm2-software/tpm2-tools.git

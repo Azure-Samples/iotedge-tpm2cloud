@@ -1,0 +1,9 @@
+Package: tpm2-pkcs11
+Version: 1.6.0-1
+Section: base
+Priority: optional
+Depends: python3-pip
+Architecture: armhf
+Maintainer: Arturo Lotito <arlotito@microsoft.com>
+Description: tpm2-pkcs11
+ https://github.com/tpm2-software/tpm2-tss-engine.git

@@ -1,0 +1,9 @@
+Package: tpm2-abmrd
+Version: 2.4.0-1
+Section: base
+Priority: optional
+Architecture: armhf
+Maintainer: Arturo Lotito <arlotito@microsoft.com>
+Description: tpm2-abmrd
+ https://github.com/tpm2-software/tpm2-tss.git
+ 

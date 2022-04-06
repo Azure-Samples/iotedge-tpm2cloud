@@ -1,0 +1,33 @@
+## DPS provisioning with X.509 certificate
+[provisioning]
+source = "dps"
+global_endpoint = "https://global.azure-devices-provisioning.net/"
+id_scope = "$DPS_SCOPE"
+
+[provisioning.attestation]
+method = "x509"
+registration_id = "$DEVICE_ID"
+identity_cert = { method = "est", common_name = "$DEVICE_ID" }  
+
+# Cert issuance via EST
+# ---------------------
+[cert_issuance.est]
+trusted_certs = ["file://$EST_SERVER_CA"]
+
+[cert_issuance.est.auth]
+username = "$EST_USERNAME"
+password = "$EST_PASSWORD"
+
+[cert_issuance.est.urls]
+default = "https://$EST_FQDN_PORT/.well-known/est"
+
+# ==============================================================================
+# PKCS#11
+# ==============================================================================
+#
+# If you used any PKCS#11 URIs above, uncomment the next block and
+# replace the stub values with your PKCS#11 configuration.
+
+[aziot_keys]
+pkcs11_lib_path = "/usr/local/lib/libtpm2_pkcs11.so"
+pkcs11_base_slot = "pkcs11:token=$TOKEN?pin-value=$USER_PIN"

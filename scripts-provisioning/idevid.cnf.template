@@ -1,0 +1,12 @@
+[ req ]
+default_bits = 2048
+distinguished_name = req_distinguished_name
+prompt = no
+
+[ req_distinguished_name ]
+C = US
+ST = Washington
+L = Redmond
+O = Contoso
+OU = iotedge-tpm2cloud
+CN = $DEVICE_ID
