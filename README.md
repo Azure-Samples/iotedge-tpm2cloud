@@ -6,7 +6,7 @@ This repo provides documentation and  scripts to help implement a the zero-touch
 ## Getting Started
 Grab the scripts from this repo:
 ```bash
-git clone https://github.com/arlotito/iotedge-tpm2cloud
+git clone https://github.com/Azure-Samples/iotedge-tpm2cloud
 cd iotedge-tpm2cloud/scripts-provisioning
 ```
 
