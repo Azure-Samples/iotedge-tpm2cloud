@@ -1,14 +1,14 @@
 #!/bin/bash
 function showHelp {
-    echo "install Azure IoT Edge 1.2"
+    echo "install Azure IoT Edge"
     echo
     echo "usage:"
     echo "   iotedge-install.sh <platform>"
     echo 
     echo "example:"
-    echo "   ./iotedge-install.sh ubuntu1804_amd64  # raspberry pi"
-    echo "   ./iotedge-install.sh ubuntu2004_amd64  # x86, ubuntu 18.04"
-    echo "   ./iotedge-install.sh debian11_armhf    # x86, ubuntu 20.04"
+    echo "   ./iotedge-install.sh ubuntu1804_amd64  # x86, ubuntu 18.04"
+    echo "   ./iotedge-install.sh ubuntu2004_amd64  # x86, ubuntu 20.04"
+    echo "   ./iotedge-install.sh debian11_armhf    # raspberry pi"
 }
 
 function ubuntu2004_amd64 {
@@ -24,18 +24,16 @@ function ubuntu1804_amd64 {
 }
 
 function debian11_armhf {
-    curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list -s > ./microsoft-prod.list
-    sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
-
-    curl https://packages.microsoft.com/keys/microsoft.asc -s | gpg --dearmor > microsoft.gpg
-    sudo cp ./microsoft.gpg /etc/apt/trusted.gpg.d/
+    wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb -O packages-microsoft-prod.deb -q > /dev/null
+    sudo dpkg -i packages-microsoft-prod.deb > /dev/null
+    rm packages-microsoft-prod.deb
 }
 
 CWD=$(pwd)
 mkdir -p ../install/tpm-administrator
 cd ../install/tpm-administrator
 
-echo "installing iotedge 1.2..."
+echo "installing the latest IoT Edge packages ...."
 
 case $1 in
     debian11_armhf)
