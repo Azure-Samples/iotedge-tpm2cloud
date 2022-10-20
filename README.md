@@ -35,7 +35,7 @@ The Platform Developer builds an image with all the software components required
 #       ./tpm2-stack-install.sh ubuntu1804_amd64 swtpm      # x86, ubuntu 18.04, SW TPM (ibmswtpm2)
 ./tpm2-stack-install.sh <platform> <hw-or-sw-tpm>
 
-# install Azure IoT Edge 1.2
+# install the latest Azure IoT Edge
 # examples: 
 #       ./iotedge-install.sh debian11_armhf                 # raspberry pi
 #       ./iotedge-install.sh ubuntu1804_amd64               # x86, ubuntu 18.04
